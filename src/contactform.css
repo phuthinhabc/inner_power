@@ -1,0 +1,27 @@
+#my-form
+{
+    background-image: url("./image/parallax.jpg");
+    color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.transparent-input
+{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    caret-color: white;
+    width: 300px;
+    transition: all linear 0.1s;
+}
+.transparent-input:focus
+{
+    transform: scale(1.1,1);
+    outline: none;
+}
+#inputName, #inputEmail
+{
+    color: white;
+}

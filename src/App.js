@@ -8,7 +8,6 @@ import Form from './contactform.js'
 import Footer from './footer.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-
 class indexPage extends Component
 {
   render()

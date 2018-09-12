@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './header.js'
 
 function Bindcoach(props)
 {
@@ -7,6 +8,15 @@ function Bindcoach(props)
         <div className="col-md-4">
             <img className="w-75" src={require(`${props.imgUrl}`)} alt="coach"/>
             <p>{props.content}</p>
+        </div>
+    )
+}
+
+function HeaderContent()
+{
+    return(
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
         </div>
     )
 }
@@ -41,8 +51,7 @@ class Coach extends Component
         const renderCoach = this.state.coachinfo.map((obj) => {return(<Bindcoach key={obj.key} content={obj.content} imgUrl={obj.imgUrl}/>)});
         return(
             <div className="container">
-                <h1>OUR COACHES</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <Header header="OUR COACHES" content={<HeaderContent />}/>
                 <div className="row">
                     {renderCoach}
                 </div>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './product.css';
+import Header from './header.js'
 
 function Content(props)
 {
@@ -12,6 +13,15 @@ function Content(props)
                 <p>{props.content}</p>
             </td>
         </tr>
+    )
+}
+
+function HeaderContent()
+{
+    return(
+        <div>
+            <p>This is content of header</p>
+        </div>
     )
 }
 
@@ -56,9 +66,7 @@ class Product extends Component
         const productRender = this.state.content.map((obj) => {return(<Content key={obj.key} header={obj.name} content={obj.content} imgUrl={obj.imgUrl}/>)});
         return(
             <div className="container py-3">
-                <h1>OUR PRODUCTS</h1>
-                <p>Lorem ipsum dolor sit amet</p>
-                <hr/>
+                <Header header="OUR PRODUCTS" content={<HeaderContent/>}/>
                 <table>
                     <tbody>
                         {productRender}

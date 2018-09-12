@@ -1,0 +1,24 @@
+#mother
+{
+    position: relative;
+}
+
+#child1, #child2
+{
+    position: absolute;
+    height: 400px;
+    transition: all linear 0.2s;
+}
+#child1
+{
+    background: grey;
+    z-index: 2;
+    width: 50%;
+}
+
+#child2
+{
+    background: lightsalmon;
+    z-index: 1;
+    width: 100%;
+}

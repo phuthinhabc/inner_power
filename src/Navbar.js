@@ -33,6 +33,11 @@ class Navbar extends Component
                     name: 'Contact',
                     Url: '/Contact',
                 },
+                {
+                    key: 4,
+                    name: 'Demo',
+                    Url: '/Demo',
+                },
             ]
         }
     }

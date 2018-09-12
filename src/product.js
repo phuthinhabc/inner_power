@@ -6,12 +6,16 @@ import Header from './header.js'
 function Content(props)
 {
     return(
-        <tr className="bg-light row py-2">
-            <td className="col-md-5"><img className="w-100" src={require(`${props.imgUrl}`)} alt="img_of_product"/></td>
-            <td className="col-md-7 text-justify">
-                <h2>{props.header}</h2>
-                <p>{props.content}</p>
+        <tr className="rounded my-2 row pl-2 my-ProductElement">
+            <td className="col-md-4"><img className="w-100" src={require(`${props.imgUrl}`)} alt="img_of_product"/></td>
+            <td id="childDemo" className="position-relative col-md-8">
+                <div className="text-justify">
+                    <h2>{props.header}</h2>
+                    <p>{props.content}</p>
+                </div>
+                <div className="rounded position-absolute"></div>
             </td>
+            {/* <td id="demoID" className='rounded position-absolute'>Haha</td> */}
         </tr>
     )
 }
@@ -67,7 +71,7 @@ class Product extends Component
         return(
             <div className="container py-3">
                 <Header header="OUR PRODUCTS" content={<HeaderContent/>}/>
-                <table>
+                <table className="">
                     <tbody>
                         {productRender}
                     </tbody>

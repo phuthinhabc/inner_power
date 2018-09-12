@@ -8,7 +8,7 @@ class Header extends Component
         return(
             <div className="container py-2">
                 <h2 id={this.props.HeaderId}>{this.props.header}</h2>
-                <p id={this.props.ContentId}>{this.props.content}</p>
+                <div id={this.props.ContentId}>{this.props.content}</div>
                 <hr/>
             </div>
         )

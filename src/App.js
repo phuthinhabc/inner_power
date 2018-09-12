@@ -7,6 +7,7 @@ import Coach from './coach.js'
 import Form from './contactform.js'
 import Footer from './footer.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import DemoComponent from './demo.js'
 
 class indexPage extends Component
 {
@@ -19,6 +20,7 @@ class indexPage extends Component
         <Product />
         <Coach />
         <Form />
+        <Footer />
       </div>
     )
   }
@@ -50,6 +52,19 @@ class ContactPage extends Component
   }
 }
 
+class Demo extends Component
+{
+  render()
+  {
+    return(
+      <div>
+        <Navbar active="Demo"/>
+        <DemoComponent />
+      </div>
+    )
+  }
+}
+
 
 class App extends Component {
   
@@ -61,7 +76,7 @@ class App extends Component {
           <Route path="/Home" component={indexPage} />
           <Route path="/Features" component={FeaturePage} />
           <Route path="/Contact" component={ContactPage} />
-          <Footer />
+          <Route path="/Demo" component={Demo} />
         </div>
       </Router>
     );

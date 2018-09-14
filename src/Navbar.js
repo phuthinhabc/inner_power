@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './Navbar.css';
-import Zoom from 'react-reveal/Zoom'; 
+import Fade from 'react-reveal'; 
 
 function Navbaritem(props)
 {
@@ -57,7 +57,7 @@ class Navbar extends Component
             }
         })
         return(
-            <Zoom>
+            <Fade top>
                 <div animateIn="fadeIn" className="container">
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         <Link className="navbar-brand" to="/Home">
@@ -73,7 +73,7 @@ class Navbar extends Component
                         </div>
                     </nav>
                 </div>
-            </Zoom>
+            </Fade>
         )
     }
 }

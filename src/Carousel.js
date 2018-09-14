@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Carousel.css';
 import React, {Component} from 'react';
+import Reveal from 'react-reveal';
 
 function CarouselHomepageContent()
 {
@@ -37,27 +38,29 @@ class Carousel extends Component
             content = <CarouselAboutpageContent/>
         }
         return(
-            <div className="container">
-                <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img className="d-block w-100" src={require("./image/home-bg-slider-img1.jpg")} alt="First slide"/>
+            <Reveal effect="fadeInLeft">
+                <div className="container">
+                    <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <img className="d-block w-100" src={require("./image/home-bg-slider-img1.jpg")} alt="First slide"/>
+                            </div>
+                            <div className="carousel-item">
+                                <img className="d-block w-100" src={require("./image/home-bg-slider-img2.jpg")} alt="Second slide"/>
+                            </div>
+                            <div className="carousel-item">
+                                <img className="d-block w-100" src={require("./image/home-bg-slider-img3.jpg")} alt="Third slide"/>
+                            </div>
+                            <div className="carousel-item">
+                                <img className="d-block w-100" src={require("./image/home-bg-slider-img4.jpg")} alt="Fourth slide"/>
+                            </div>
                         </div>
-                        <div className="carousel-item">
-                            <img className="d-block w-100" src={require("./image/home-bg-slider-img2.jpg")} alt="Second slide"/>
-                        </div>
-                        <div className="carousel-item">
-                            <img className="d-block w-100" src={require("./image/home-bg-slider-img3.jpg")} alt="Third slide"/>
-                        </div>
-                        <div className="carousel-item">
-                            <img className="d-block w-100" src={require("./image/home-bg-slider-img4.jpg")} alt="Fourth slide"/>
-                        </div>
+                        <div id={this.props.id} className="text-center position-absolute">
+                            {content}
+                        </div>  
                     </div>
-                    <div id={this.props.id} className="text-center position-absolute">
-                        {content}
-                    </div>  
                 </div>
-            </div>
+            </Reveal>
         )
     }
 }

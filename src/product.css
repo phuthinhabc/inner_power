@@ -1,4 +1,4 @@
-.my-ProductElement td:nth-child(2)
+.my-ProductElement ScrollAnimation div:nth-child(2)
 {
     display: flex;
     flex-direction: column;

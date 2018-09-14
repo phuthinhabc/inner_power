@@ -6,9 +6,10 @@ import "animate.css/animate.min.css";
 
 function Bindcoach(props)
 {
+    const animateOnce = true;
     return(
         <div className="col-md-4">
-            <ScrollAnimation animateIn="slideInUp" animateOnce='true'>
+            <ScrollAnimation animateIn="fadeIn" animateOnce={animateOnce}>
                 <img className="w-75" src={require(`${props.imgUrl}`)} alt="coach"/>
                 <p>{props.content}</p>
             </ScrollAnimation>

@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom'
 import './Navbar.css';
+import Zoom from 'react-reveal/Zoom'; 
 
 function Navbaritem(props)
 {
@@ -41,21 +42,6 @@ class Navbar extends Component
             ],
         }
     }
-    componentDidMount()
-    {
-        this.myInterval=setInterval(()=>
-        {
-            document.getElementById('my-navbar').style.top="0px";clearInterval(this.myInterval)
-        },0);
-    }
-    componentDidUpdate()
-    {
-        this.myInterval=setInterval(()=>
-        {
-            document.getElementById('my-navbar').style.top="0px";clearInterval(this.myInterval)
-        },0);
-        console.log('didupdate');
-    }
     render()
     {
         console.log('render');
@@ -71,21 +57,23 @@ class Navbar extends Component
             }
         })
         return(
-            <div id="my-navbar" className='container'>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <Link className="navbar-brand" to="/Home">
-                        <img src={require('./image/logo.png')} height="30" alt="Logo"/>
-                    </Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            {myNavName}
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+            <Zoom>
+                <div animateIn="fadeIn" className="container">
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <Link className="navbar-brand" to="/Home">
+                            <img src={require('./image/logo.png')} height="30" alt="Logo"/>
+                        </Link>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav">
+                                {myNavName}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </Zoom>
         )
     }
 }

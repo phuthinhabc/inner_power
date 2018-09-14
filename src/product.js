@@ -2,21 +2,22 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './product.css';
 import Header from './header.js'
-import Zoom from 'react-reveal/Zoom'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 function Content(props)
 {
+    const animateOnce = true;
     return(
-        <tr className="rounded my-2 row pl-2 my-ProductElement">
-            <td className="col-md-4"><img className="w-100" src={require(`${props.imgUrl}`)} alt="img_of_product"/></td>
-            <td id="childDemo" className="position-relative col-md-8">
+        <div className="rounded my-2 row pl-2 my-ProductElement">
+            <ScrollAnimation animateOnce = {animateOnce} animateIn="slideInLeft" className="col-md-4"><img className="w-100" src={require(`${props.imgUrl}`)} alt="img_of_product"/></ScrollAnimation>
+            <ScrollAnimation animateOnce={animateOnce} animateIn="slideInRight" id="childDemo" className="position-relative col-md-8">
                 <div className="text-justify px-2">
                     <h2>{props.header}</h2>
                     <p>{props.content}</p>
                 </div>
                 <div className="rounded position-absolute"></div>
-            </td>
-        </tr>
+            </ScrollAnimation>
+        </div>
     )
 }
 
@@ -71,13 +72,11 @@ class Product extends Component
         return(
             <div className="container py-3">
                 <Header header="OUR PRODUCTS" content={<HeaderContent/>}/>
-                <table className="">
-                    <tbody>
-                        <Zoom>
-                            {productRender}
-                        </Zoom>
-                    </tbody>
-                </table>
+                <div className="">
+                    <div>
+                        {productRender}
+                    </div>
+                </div>
             </div>
         )
     }

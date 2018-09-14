@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header.js'
+import ScrollAnimation from 'react-animate-on-scroll'; 
+import "animate.css/animate.min.css";
 
 function Bindcoach(props)
 {
     return(
         <div className="col-md-4">
-            <img className="w-75" src={require(`${props.imgUrl}`)} alt="coach"/>
-            <p>{props.content}</p>
+            <ScrollAnimation animateIn="slideInUp" animateOnce='true'>
+                <img className="w-75" src={require(`${props.imgUrl}`)} alt="coach"/>
+                <p>{props.content}</p>
+            </ScrollAnimation>
         </div>
     )
 }

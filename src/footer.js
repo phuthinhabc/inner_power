@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './header.js'
-import '@fortawesome/fontawesome-free/css/all.css'
-import './footer.css'
 import {Link} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.css'
+import 'animate.css/animate.min.css'
+import ScrollAnimation from 'react-animate-on-scroll'
+
+import Header from './header.js'
+import './footer.css'
+
 
 function HeaderContent(props)
 {
@@ -87,11 +91,13 @@ class Footer extends Component
         const Content = this.state.HeaderofFooterContent.map(obj => {return(<HeaderContent key={obj.key} href={obj.link} ImgId="my-ImgId" img={obj.imgClassName} />)})
         const FooterContent = this.state.ContentofFooterContent.map(obj =>{return(<Link key={obj.key} className="my-FooterContent" to={obj.Url}>{obj.name}</Link>)})
         return(
-            <div id="my-HeaderContent" className="container mt-4 py-5">
-                <Header HeaderId="my-HeaderId" header="FOLLOW US" ContentId="my-ContentId" content={Content}/>
-                {FooterContent}
-                <p className="pt-4">Coppyright &copy; 2016 Inner Power</p>
-            </div>
+            <ScrollAnimation animateIn="slideInUp" animateOnce='true'>
+                <div id="my-HeaderContent" className="container mt-4 py-5">
+                    <Header HeaderId="my-HeaderId" header="FOLLOW US" ContentId="my-ContentId" content={Content}/>
+                    {FooterContent}
+                    <p className="pt-4">Coppyright &copy; 2016 Inner Power</p>
+                </div>
+            </ScrollAnimation>
         )
     }
 }

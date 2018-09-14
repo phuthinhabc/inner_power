@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom'
-
+import './Navbar.css';
 
 function Navbaritem(props)
 {
@@ -38,11 +38,27 @@ class Navbar extends Component
                     name: 'Demo',
                     Url: '/Demo',
                 },
-            ]
+            ],
         }
+    }
+    componentDidMount()
+    {
+        this.myInterval=setInterval(()=>
+        {
+            document.getElementById('my-navbar').style.top="0px";clearInterval(this.myInterval)
+        },0);
+    }
+    componentDidUpdate()
+    {
+        this.myInterval=setInterval(()=>
+        {
+            document.getElementById('my-navbar').style.top="0px";clearInterval(this.myInterval)
+        },0);
+        console.log('didupdate');
     }
     render()
     {
+        console.log('render');
         const myActive = this.props.active
         const myNavName = this.state.navbar.map(obj => {
             if (myActive === obj.name)
@@ -55,7 +71,7 @@ class Navbar extends Component
             }
         })
         return(
-            <div className='container'>
+            <div id="my-navbar" className='container'>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <Link className="navbar-brand" to="/Home">
                         <img src={require('./image/logo.png')} height="30" alt="Logo"/>
@@ -73,5 +89,4 @@ class Navbar extends Component
         )
     }
 }
-
 export default Navbar;

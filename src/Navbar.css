@@ -1,0 +1,18 @@
+#my-navbar
+{
+    position: relative;
+    /* animation: demoAnimation 1s linear;     */
+    transition: all linear 0.3s;
+    top:-50px;
+}
+/* @keyframes demoAnimation
+{
+    0%
+    {
+        top:-50px;
+    }
+    100%
+    {
+        top: 0px;
+    }
+} */

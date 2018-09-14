@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './product.css';
 import Header from './header.js'
+import Zoom from 'react-reveal/Zoom'
 
 function Content(props)
 {
@@ -9,13 +10,12 @@ function Content(props)
         <tr className="rounded my-2 row pl-2 my-ProductElement">
             <td className="col-md-4"><img className="w-100" src={require(`${props.imgUrl}`)} alt="img_of_product"/></td>
             <td id="childDemo" className="position-relative col-md-8">
-                <div className="text-justify">
+                <div className="text-justify px-2">
                     <h2>{props.header}</h2>
                     <p>{props.content}</p>
                 </div>
                 <div className="rounded position-absolute"></div>
             </td>
-            {/* <td id="demoID" className='rounded position-absolute'>Haha</td> */}
         </tr>
     )
 }
@@ -73,7 +73,9 @@ class Product extends Component
                 <Header header="OUR PRODUCTS" content={<HeaderContent/>}/>
                 <table className="">
                     <tbody>
-                        {productRender}
+                        <Zoom>
+                            {productRender}
+                        </Zoom>
                     </tbody>
                 </table>
             </div>

@@ -1,24 +1,37 @@
 #mother
 {
     position: relative;
+    height: 500px;
 }
 
 #child1, #child2
 {
     position: absolute;
-    height: 400px;
+    height: 100%;
     transition: all linear 0.2s;
 }
 #child1
 {
-    background: grey;
+    background: #C6CDD1;
     z-index: 2;
     width: 50%;
 }
 
 #child2
 {
-    background: lightsalmon;
+    background: #E9DDC8;
     z-index: 1;
     width: 100%;
+}
+#displayIDDemo
+{
+    display: flex;
+    width: 100%;
+    transition: all linear 1s;
+    justify-content: center;
+}
+#displayIDDemoh1
+{
+    transition: all linear 1s;
+    opacity: 0;
 }

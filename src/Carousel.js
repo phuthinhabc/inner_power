@@ -43,7 +43,7 @@ class Carousel extends Component
         const CarouselStore = this.props.StorageStore;
         const renderCarouselImgSecondary = CarouselStore.Carousel[this.props.srcImg]['Images']['secondary'].map((obj)=>(<div key={obj.key} className="carousel-item"><img className="d-block w-100" src={require(`${obj.imgUrl}`)} alt="Second slide"/></div>));
         return(
-            <Reveal effect="fadeInLeft">
+            <Reveal effect={this.props.animation}>
                 <div className="container">
                     <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">

@@ -23,7 +23,7 @@ class indexPage extends Component
     return(
       <div>
         <Navbar active="Home"/>
-        <Carousel id="my-homepage-carousel" value="homepage" srcImg='indexPage'/>
+        <Carousel id="my-homepage-carousel" value="homepage" srcImg='indexPage' animation='fadeInUpBig'/>
         <Welcome />
         <Product />
         <Coach />
@@ -41,7 +41,7 @@ class ProductPage extends Component
     return(
       <div>
         <Navbar active="Products"/>
-        <Carousel id="my-aboutpage-carousel" value="aboutpage" srcImg='productPage'/>
+        <Carousel id="my-aboutpage-carousel" value="aboutpage" srcImg='productPage' animation='slideInLeft'/>
         <OverViewProduct />
         <ProductValue />
       </div>

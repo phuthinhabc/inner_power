@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header.js'
 import ScrollAnimation from 'react-animate-on-scroll'; 
 import "animate.css/animate.min.css";
-
+//test
 function Bindcoach(props)
 {
     const animateOnce = true;

@@ -44,7 +44,6 @@ class Navbar extends Component
     }
     render()
     {
-        console.log('render');
         const myActive = this.props.active
         const myNavName = this.state.navbar.map(obj => {
             if (myActive === obj.name)
@@ -58,7 +57,7 @@ class Navbar extends Component
         })
         return(
             <Fade top>
-                <div animateIn="fadeIn" className="container">
+                <div className="container">
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         <Link className="navbar-brand" to="/Home">
                             <img src={require('./image/logo.png')} height="30" alt="Logo"/>

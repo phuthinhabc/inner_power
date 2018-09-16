@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header.js'
 import ScrollAnimation from 'react-animate-on-scroll'; 
 import "animate.css/animate.min.css";
+import {observer, inject} from 'mobx-react';
 
 function Bindcoach(props)
 {
@@ -26,34 +27,14 @@ function HeaderContent()
     )
 }
 
+@inject('Coach')
+@observer
 class Coach extends Component
 {
-    constructor(props)
-    {
-        super(props)
-        this.state={
-            coachinfo:[
-                {
-                    key: 1,
-                    imgUrl: './image/trainer-img1.jpg',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit molestiae, blanditiis esse sapiente quis dolore quidem'
-                },
-                {
-                    key: 2,
-                    imgUrl: './image/trainer-img2.jpg',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit molestiae, blanditiis esse sapiente quis dolore quidem'
-                },
-                {
-                    key: 3,
-                    imgUrl: './image/trainer-img3.jpg',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit molestiae, blanditiis esse sapiente quis dolore quidem'
-                }
-            ],
-        }
-    }
     render()
     {
-        const renderCoach = this.state.coachinfo.map((obj) => {return(<Bindcoach key={obj.key} content={obj.content} imgUrl={obj.imgUrl}/>)});
+        const CoachStore = this.props.Coach;
+        const renderCoach = CoachStore.coach.map((obj) => {return(<Bindcoach key={obj.key} content={obj.content} imgUrl={obj.imgUrl}/>)});
         return(
             <div className="container">
                 <Header header="OUR COACHES" content={<HeaderContent />}/>

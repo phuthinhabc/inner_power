@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
+import {Provider} from 'mobx-react';
+import CoachStore from './stores/CoachStore.js';
 
 import './Container.css'
 
@@ -72,6 +74,7 @@ class Demo extends Component
 function Container({location})
 {
     return(
+      <Provider Coach={CoachStore}>
         <Wrapper >
           <TransitionGroup className="transition-group">
             <CSSTransition
@@ -91,6 +94,7 @@ function Container({location})
             </CSSTransition>
           </TransitionGroup>
         </Wrapper>
+      </Provider>
     )
 }
 const Wrapper = styled.div`

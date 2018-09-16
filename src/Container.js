@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, HashRouter } from 'react-router-dom';
 import {Provider} from 'mobx-react';
 import Storage from './stores/Storage.js';
 
@@ -14,6 +14,7 @@ import Footer from './footer.js';
 import DemoComponent from './demo.js';
 import Welcome from './Welcome.js';
 import OverViewProduct from './ProductOverView.js'
+import ProductValue from './ProductValue.js'
 
 class indexPage extends Component
 {
@@ -42,6 +43,7 @@ class ProductPage extends Component
         <Navbar active="Products"/>
         <Carousel id="my-aboutpage-carousel" value="aboutpage" srcImg='productPage'/>
         <OverViewProduct />
+        <ProductValue />
       </div>
     )
   }
@@ -76,13 +78,15 @@ function Container()
 {
     return(
       <Provider StorageStore={Storage}>
-        <Switch>
-          <Route exact path="/" component={indexPage} />
-          <Route path="/Home" component={indexPage} />
-          <Route path="/Products" component={ProductPage} />
-          <Route path="/Contact" component={ContactPage} />
-          <Route path="/Demo" component={Demo} />
-        </Switch>
+        <HashRouter>
+          <div>
+            <Route exact path="/" component={indexPage} />
+            <Route path="/Home" component={indexPage} />
+            <Route path="/Products" component={ProductPage} />
+            <Route path="/Contact" component={ContactPage} />
+            <Route path="/Demo" component={Demo} />
+          </div>
+        </HashRouter>
       </Provider>
     )
 }

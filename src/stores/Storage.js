@@ -84,6 +84,27 @@ class Storage
         },
     };
 
+    @observable value_productPage=
+    [
+        {
+            key: 1,
+            content: 'lorem 1',
+            imgUrl: './image/value-productPage-1.jpg',
+            animation: 'zoomInLeft'
+        },
+        {
+            key: 2,
+            content: 'lorem 2',
+            imgUrl: './image/value-productPage-2.jpg',
+            animation: 'zoomInRight'
+        },
+        {
+            key: 3,
+            content: 'lorem 3',
+            imgUrl: './image/value-productPage-3.jpg',
+            animation: 'zoomInLeft'
+        },
+    ]
 }
 
 const store = new Storage();

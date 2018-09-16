@@ -33,6 +33,7 @@
     "font-awesome": "^4.7.0",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "http-server": "^0.11.1",
     "jest": "20.0.4",
     "jquery": "^3.3.1",
     "mobx": "^5.1.1",
@@ -106,7 +107,9 @@
     ]
   },
   "babel": {
-    "plugins": ["babel-plugin-transform-decorators-legacy"],
+    "plugins": [
+      "babel-plugin-transform-decorators-legacy"
+    ],
     "presets": [
       "react-app"
     ]

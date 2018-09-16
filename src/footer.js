@@ -61,7 +61,7 @@ class Footer extends Component
                 {
                     key: 2,
                     name: "products",
-                    Url: "/Features",
+                    Url: "/Product",
                 },
                 {
                     key: 3,

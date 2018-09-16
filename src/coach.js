@@ -27,14 +27,14 @@ function HeaderContent()
     )
 }
 
-@inject('Coach')
+@inject('StorageStore')
 @observer
 class Coach extends Component
 {
     render()
     {
-        const CoachStore = this.props.Coach;
-        const renderCoach = CoachStore.coach.map((obj) => {return(<Bindcoach key={obj.key} content={obj.content} imgUrl={obj.imgUrl}/>)});
+        const CoachStore = this.props.StorageStore;
+        const renderCoach = CoachStore.Coach.map((obj) => {return(<Bindcoach key={obj.key} content={obj.content} imgUrl={obj.imgUrl}/>)});
         return(
             <div className="container">
                 <Header header="OUR COACHES" content={<HeaderContent />}/>

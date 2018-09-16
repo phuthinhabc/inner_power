@@ -9,7 +9,9 @@ function Content(props)
     const animateOnce = true;
     return(
         <div className="rounded my-2 row pl-2 my-ProductElement">
-            <ScrollAnimation animateOnce = {animateOnce} animateIn="slideInLeft" className="col-md-4"><img className="w-100" src={require(`${props.imgUrl}`)} alt="img_of_product"/></ScrollAnimation>
+            <ScrollAnimation animateOnce = {animateOnce} animateIn="slideInLeft" className="col-md-4">
+                <img className="w-100" src={require(`${props.imgUrl}`)} alt="img_of_product"/>
+            </ScrollAnimation>
             <ScrollAnimation animateOnce={animateOnce} animateIn="slideInRight" id="childDemo" className="position-relative col-md-8">
                 <div className="text-justify px-2">
                     <h2>{props.header}</h2>
@@ -70,7 +72,7 @@ class Product extends Component
     {
         const productRender = this.state.content.map((obj) => {return(<Content key={obj.key} header={obj.name} content={obj.content} imgUrl={obj.imgUrl}/>)});
         return(
-            <div className="container py-3">
+            <div className="container py-3 bg-light">
                 <Header header="OUR PRODUCTS" content={<HeaderContent/>}/>
                 <div className="">
                     <div>

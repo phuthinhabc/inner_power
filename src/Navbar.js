@@ -1,9 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import './Navbar.css';
-import Fade from 'react-reveal'; 
+import {Fade} from 'react-reveal'; 
 
 function Navbaritem(props)
 {
@@ -26,8 +27,8 @@ class Navbar extends Component
                 },
                 {
                     key: 2,
-                    name: 'Features',
-                    Url: '/Features',
+                    name: 'Products',
+                    Url: '/Products',
                 },
                 {
                     key: 3,

@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Carousel.css';
 import React, {Component} from 'react';
 import Reveal from 'react-reveal';
+import {inject, observer} from 'mobx-react';
 
 function CarouselHomepageContent()
 {
@@ -24,6 +25,8 @@ function CarouselAboutpageContent()
     )
 }
 
+@inject('StorageStore')
+@observer
 class Carousel extends Component
 {
     render()
@@ -37,23 +40,17 @@ class Carousel extends Component
         {
             content = <CarouselAboutpageContent/>
         }
+        const CarouselStore = this.props.StorageStore;
+        const renderCarouselImgSecondary = CarouselStore.Carousel[this.props.srcImg]['Images']['secondary'].map((obj)=>(<div key={obj.key} className="carousel-item"><img className="d-block w-100" src={require(`${obj.imgUrl}`)} alt="Second slide"/></div>));
         return(
             <Reveal effect="fadeInLeft">
                 <div className="container">
                     <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img className="d-block w-100" src={require("./image/home-bg-slider-img1.jpg")} alt="First slide"/>
+                                <img className="d-block w-100" src={require(`${CarouselStore.Carousel[this.props.srcImg]['Images']['primary']['imgUrl']}`)} alt="First slide"/>
                             </div>
-                            <div className="carousel-item">
-                                <img className="d-block w-100" src={require("./image/home-bg-slider-img2.jpg")} alt="Second slide"/>
-                            </div>
-                            <div className="carousel-item">
-                                <img className="d-block w-100" src={require("./image/home-bg-slider-img3.jpg")} alt="Third slide"/>
-                            </div>
-                            <div className="carousel-item">
-                                <img className="d-block w-100" src={require("./image/home-bg-slider-img4.jpg")} alt="Fourth slide"/>
-                            </div>
+                            {renderCarouselImgSecondary}
                         </div>
                         <div id={this.props.id} className="text-center position-absolute">
                             {content}

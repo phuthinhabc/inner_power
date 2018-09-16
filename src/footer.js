@@ -92,7 +92,7 @@ class Footer extends Component
         const FooterContent = this.state.ContentofFooterContent.map(obj =>{return(<Link key={obj.key} className="my-FooterContent" to={obj.Url}>{obj.name}</Link>)})
         const animateOnce = true;
         return(
-            <ScrollAnimation animateIn="fadeInLeft" animateOnce={animateOnce}>
+            <ScrollAnimation animateIn="fadeInRight" animateOnce={animateOnce}>
                 <div id="my-HeaderContent" className="container mt-4 py-5">
                     <Header HeaderId="my-HeaderId" header="FOLLOW US" ContentId="my-ContentId" content={Content}/>
                     {FooterContent}

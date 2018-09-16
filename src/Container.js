@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import styled from "styled-components";
 import {Provider} from 'mobx-react';
-import CoachStore from './stores/CoachStore.js';
+import Storage from './stores/Storage.js';
 
 import './Container.css'
 
@@ -14,6 +12,8 @@ import Coach from './coach.js';
 import Form from './contactform.js';
 import Footer from './footer.js';
 import DemoComponent from './demo.js';
+import Welcome from './Welcome.js';
+import OverViewProduct from './ProductOverView.js'
 
 class indexPage extends Component
 {
@@ -22,7 +22,8 @@ class indexPage extends Component
     return(
       <div>
         <Navbar active="Home"/>
-        <Carousel id="my-homepage-carousel" value="homepage"/>
+        <Carousel id="my-homepage-carousel" value="homepage" srcImg='indexPage'/>
+        <Welcome />
         <Product />
         <Coach />
         <Form />
@@ -32,14 +33,15 @@ class indexPage extends Component
   }
 }
 
-class FeaturePage extends Component
+class ProductPage extends Component
 {
   render()
   {
     return(
       <div>
-        <Navbar active="Features"/>
-        <Carousel id="my-aboutpage-carousel" value="aboutpage"/>
+        <Navbar active="Products"/>
+        <Carousel id="my-aboutpage-carousel" value="aboutpage" srcImg='productPage'/>
+        <OverViewProduct />
       </div>
     )
   }
@@ -52,7 +54,6 @@ class ContactPage extends Component
     return(
       <div>
           <Navbar active="Contact"/>
-          <Carousel id="" value="contactpage"/>
       </div>
     )
   }
@@ -71,64 +72,19 @@ class Demo extends Component
   }
 }
 
-function Container({location})
+function Container()
 {
     return(
-      <Provider Coach={CoachStore}>
-        <Wrapper >
-          <TransitionGroup className="transition-group">
-            <CSSTransition
-              key={location.key}
-              timeout={{ enter: 500, exit: 500 }}
-              classNames={'fade'}
-            > 
-              <section id="route-section">
-                <Switch location={location}>
-                    <Route exact path="/" component={indexPage} />
-                    <Route path="/Home" component={indexPage} />
-                    <Route path="/Features" component={FeaturePage} />
-                    <Route path="/Contact" component={ContactPage} />
-                    <Route path="/Demo" component={Demo} />
-                </Switch>
-              </section>
-            </CSSTransition>
-          </TransitionGroup>
-        </Wrapper>
+      <Provider StorageStore={Storage}>
+        <Switch>
+          <Route exact path="/" component={indexPage} />
+          <Route path="/Home" component={indexPage} />
+          <Route path="/Products" component={ProductPage} />
+          <Route path="/Contact" component={ContactPage} />
+          <Route path="/Demo" component={Demo} />
+        </Switch>
       </Provider>
     )
 }
-const Wrapper = styled.div`
-  .fade-enter 
-  {
-    opacity: 0.01;
-  }
-  .fade-enter.fade-enter-active 
-  {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-  .fade-exit 
-  {
-    opacity: 1;
-  }
-
-  .fade-exit.fade-exit-active 
-  {
-    opacity: 0.01;
-    transition: opacity 500ms ease-in;
-  }
-
-  div.transition-group 
-  {
-    position: relative;
-  }
-  section.route-section 
-  {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-`
 
 export default withRouter(Container);

@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.ff3cac62.css",
   "main.css.map": "static/css/main.ff3cac62.css.map",
-  "main.js": "static/js/main.545ee256.js",
-  "main.js.map": "static/js/main.545ee256.js.map",
+  "main.js": "static/js/main.6011fc99.js",
+  "main.js.map": "static/js/main.6011fc99.js.map",
   "static/media/Carousel-indexPage-1.jpg": "static/media/Carousel-indexPage-1.05e43b82.jpg",
   "static/media/Carousel-indexPage-2.jpg": "static/media/Carousel-indexPage-2.9da81346.jpg",
   "static/media/Carousel-indexPage-3.jpg": "static/media/Carousel-indexPage-3.beab2ce0.jpg",
@@ -46,9 +46,9 @@
   "static/media/trainer-img1.jpg": "static/media/trainer-img1.5ecf5c86.jpg",
   "static/media/trainer-img2.jpg": "static/media/trainer-img2.dbf69ec0.jpg",
   "static/media/trainer-img3.jpg": "static/media/trainer-img3.678ce2cf.jpg",
-  "static/media/value1.jpg": "static/media/value1.64f75159.jpg",
-  "static/media/value2.jpg": "static/media/value2.dd91f3dd.jpg",
-  "static/media/value3.jpg": "static/media/value3.6892e406.jpg",
+  "static/media/value-productPage-1.jpg": "static/media/value-productPage-1.64f75159.jpg",
+  "static/media/value-productPage-2.jpg": "static/media/value-productPage-2.dd91f3dd.jpg",
+  "static/media/value-productPage-3.jpg": "static/media/value-productPage-3.6892e406.jpg",
   "static/media/video-thumbnail.jpg": "static/media/video-thumbnail.9ab85bfd.jpg",
   "static/media/welcome-indexPage-1.jpg": "static/media/welcome-indexPage-1.f1052e11.jpg"
 }
